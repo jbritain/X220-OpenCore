@@ -31,7 +31,7 @@ Replace the EFI folder on the first partition with the one provided in this repo
 
 1. [Generate your own](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) `Serial Number`, `MLB` and `UUID`, and populate `ROM` with the mac address of your Ethernet port.
 
-2. The `SSDT-PM.aml` is generated using an `X220` with an `i5-2520M` processor. If you have a different processor, please [generate this file after install](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#sandy-and-ivy-bridge-power-management) and replace it.
+2. The `SSDT-PM.aml` is generated using an `X220` with an `i5-2520M` processor. If you have a different processor, please [generate this file after install](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#sandy-and-ivy-bridge-power-management) and replace it. You may need to disable this entirely pre-install if you get stepper error kernel panics on boot.
 
 3. If your `X220` has a `USB3.0` port, please [map the port](https://dortania.github.io/OpenCore-Post-Install/usb/) or it might not run at `USB3.0` speed.
 
