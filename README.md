@@ -14,13 +14,17 @@ Those who want to install ONLY `macOS` on their machine. If you intend to instal
 
 #### Installing macOS
 
-1. Make a Installation USB Drive per [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/). Install `macOS High Sierra` on the X220.
+**As of 2023, the High Sierra recovery servers are no longer active, so the online installer you generate with Dortania's guide does not work.**
+You can use [https://github.com/corpnewt/UnPlugged/blob/main/README.md](UnPlugged) to create an offline installer USB.
+
+Replace the EFI folder on the first partition with the one provided in this repo. **If you recieve stepper errors on boot, disable the SSDT in `config.plist` until you can generate your own.**
+
 
 #### Optimizing macOS
 
 1. [Generate your own](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) `Serial Number`, `MLB` and `UUID`, and populate `ROM` with the mac address of your Ethernet port.
 
-2. The `SSDT-PM.aml` is generated using an `X220i` with an `i3-2310M` processor. If you have a different processor, please [generate this file after install](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#sandy-and-ivy-bridge-power-management) and replace it.
+2. The `SSDT-PM.aml` is generated using an `X220` with an `i5-2520M` processor. If you have a different processor, please [generate this file after install](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#sandy-and-ivy-bridge-power-management) and replace it.
 
 3. If your `X220` has a `USB3.0` port, please [map the port](https://dortania.github.io/OpenCore-Post-Install/usb/) or it might not run at `USB3.0` speed.
 
@@ -53,7 +57,7 @@ I know this is not a good practice, but currently I can't spare the time and ene
 If the custom `SSDT`s are made, we can ditch `rEFInd` and use `OpenCore` to boot all OSes, which is a lot cleaner.
 If anyone is interested in doing this, you're welcomed to fork this repo or create PRs.
 
-5. This guide assumes you have swapped the WiFi card for a natively supported one (like the DW1510). No Bluetooth / Wifi kext is present in this repo. If you need it, please add it on your own.
+5. ITLWM is included, however you will need to install HeliPort to get WiFi to work.
 
 #### Binary Versions
 
@@ -67,4 +71,4 @@ If anyone is interested in doing this, you're welcomed to fork this repo or crea
 | VirtualSMC & modules | 1.3.0            |
 | VoodooPS2Controller  | Modded from [mcdonnelltech](https://x220.mcdonnelltech.com/) |
 | DSDT.aml             | from [mcdonnelltech](https://x220.mcdonnelltech.com/) |
-| SSDT-PM.aml          | Generated using [ssdtPRGen](https://github.com/Piker-Alpha/ssdtPRGen.sh) on X220i / i3-2310M |
+| SSDT-PM.aml          | Generated using [ssdtPRGen](https://github.com/Piker-Alpha/ssdtPRGen.sh) on X220 / i5-2520M |
