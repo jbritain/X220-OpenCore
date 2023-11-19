@@ -5,19 +5,26 @@
 ## Who is this repo for
 
 Those who want to install ONLY `macOS` on their machine. If you intend to install other OSes as well, head to the [X220-Opencore-Dualboot](https://github.com/w43322/X220-OpenCore-Dualboot) repo.
+Note that I have not forked that repo, and there are some differences between the upstream and the fork, see below.
+
+## Differences from fork
+- `ScanPolicy` set to 0 as with the version in the upstream.
+- `itlwm` and `HoRNDIS` included for internet access on Intel cards.
+- The `SSDT-PM` generated in the upstream did not work on my X220, and caused a kernel panic on boot. I generated my own and included it here, but if you get a kernel panic, disable it in `config.plist`.
+- Special steps are required to create an installer as online installation of High Sierra doesn't work anymore.
 
 ## TLDR
 
-#### Flashing BIOS
+### Flashing BIOS
 
 1. Flash the modified BIOS under Windows. Instructions are provided in the zip file.
 
-#### Installing macOS
+### Installing macOS
 
 **As of 2023, the High Sierra recovery servers are no longer active, so the online installer you generate with Dortania's guide does not work.**
 You can use [https://github.com/corpnewt/UnPlugged/blob/main/README.md](UnPlugged) to create an offline installer USB.
 
-Replace the EFI folder on the first partition with the one provided in this repo. **If you recieve stepper errors on boot, disable the SSDT in `config.plist` until you can generate your own.**
+Replace the EFI folder on the first partition with the one provided in this repo. **If you recieve stepper errors on boot, disable `SSDT-PM` in `config.plist` until you can generate your own.**
 
 
 #### Optimizing macOS
@@ -30,7 +37,7 @@ Replace the EFI folder on the first partition with the one provided in this repo
 
 ## Additional Information
 
-#### Why can't one simply follow Dortania's Guide?
+### Why can't one simply follow Dortania's Guide?
 
 Well, I actually followed [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/) to make this repo, but some modifications had to be made to make audio and battery readouts work.
 
@@ -59,7 +66,7 @@ If anyone is interested in doing this, you're welcomed to fork this repo or crea
 
 5. ITLWM is included, however you will need to install HeliPort to get WiFi to work.
 
-#### Binary Versions
+### Binary Versions
 
 | Binary               | Version / Source |
 | -------------------- | ---------------- |
