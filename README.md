@@ -22,7 +22,7 @@ Note that I have not forked that repo, and there are some differences between th
 ### Installing macOS
 
 **As of 2023, the High Sierra recovery servers are no longer active, so the online installer you generate with Dortania's guide does not work.**
-You can use [https://github.com/corpnewt/UnPlugged/blob/main/README.md](UnPlugged) to create an offline installer USB.
+You can use [UnPlugged](https://github.com/corpnewt/UnPlugged/blob/main/README.md) to create an offline installer USB.
 
 Replace the EFI folder on the first partition with the one provided in this repo. **If you recieve stepper errors on boot, disable `SSDT-PM` in `config.plist` until you can generate your own.**
 
